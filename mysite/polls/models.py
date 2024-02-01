@@ -10,6 +10,9 @@ class Question(models.Model): # models.Model is a parent class
     
     def __str__(self) -> str:
         return "Question: " + self.question_text
+    
+    def was_published_recently(self):
+        return self.pub_date >= timezone.now() - timezone.timedelta(days=1)
 #one to many, each question can have multiple choices, but each choice can only have one question. 
     
 class Choice(models.Model):
@@ -20,8 +23,6 @@ class Choice(models.Model):
     def __str__(self) -> str:
         return "Choice: "+self.choice_text
     
-    def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 # okay this is how it works, django models.Model automatically provides tables names with an ID field
 
 
