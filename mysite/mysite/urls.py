@@ -20,6 +20,4 @@ from django.urls import include, path # include() sends the url to the inner fun
 urlpatterns = [
    path('polls/', include("polls.urls")), #include the view from the inner mysite/
    path('admin/', admin.site.urls),
-   path('', include("polls.urls")),
-   path('moosie/', include("polls.urls")),
 ]                                   

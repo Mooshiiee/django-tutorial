@@ -20,7 +20,7 @@ def index(request):
     
     
 def moosie(request):
-    return HttpResponse("<h1>Moosies Page</h1> <p>fuck i love routing<p>")
+    return render(request, "polls/moosie.html")
     
 def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)

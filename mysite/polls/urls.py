@@ -3,6 +3,8 @@ from django.urls import path
 from . import views
 
 #!! /polls/ + 
+
+app_name = "polls"
 urlpatterns = [
     path("", views.index, name="index"),
     path("moosie/", views.moosie, name="moosie"),

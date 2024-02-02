@@ -2,7 +2,8 @@
     <ul>
     {% for question in latest_question_list %}
         <li>
-            <a href="/polls/{{ question.id }}/">{{ question.question_text }}</a>
+            <a href={% url 'polls:detail' question.id %}>{{ question.question_text }}</a>
+            {% comment " that is crazy no need for hardcoded urls simply use the name field in path" %}{% endcomment %}
         </li>
    
 
@@ -13,3 +14,4 @@
     <p>No polls are available.</p>
 {% endif %}
 
+<a href={% url 'polls:moosie'%}>Moosies Page<a/>

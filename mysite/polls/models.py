@@ -22,6 +22,7 @@ class Choice(models.Model):
     
     def __str__(self) -> str:
         return "Choice: "+self.choice_text
+
     
 # okay this is how it works, django models.Model automatically provides tables names with an ID field
 
